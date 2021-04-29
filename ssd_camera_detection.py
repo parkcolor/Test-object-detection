@@ -147,7 +147,7 @@ else :
     frameWidth = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
     frameHeight = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
 
-    out = cv2.VideoWriter('data/videos/output.avi', cv2.VideoWriter_fourcc(*'H264'),10,(frameWidth,frameHeight))
+    out = cv2.VideoWriter('data/videos/output1.mp4', cv2.VideoWriter_fourcc(*'H264'),10,(frameWidth,frameHeight))
     while cap.isOpened() :
         # 사진을 1장씩 가져와서.
         ret, frame = cap.read()
@@ -159,9 +159,9 @@ else :
             start_time = time.time()
             img = show_inference(detection_model, frame )
             end_time = time.time()
-            # print(end_time - start_time)
+            print(end_time - start_time)
             out.write(img)
-            print(img.shape)
+            
 
             # 키보드에서 esc키를 누르면 exit 하라는 것.
             if cv2.waitKey(25) & 0xFF == 27 :

@@ -27,7 +27,7 @@ frame_height = int(sv.get(4))
 #     frame_height = int(frame_height / 2) + 1
 
 
-out = cv2.VideoWriter('data/videos/video_seg.mp4v', 
+out = cv2.VideoWriter('data/videos/video_seg.mp4', 
                 cv2.VideoWriter_fourcc(*'H264'), 
                 10,
                 ( frame_width , frame_height ) )  
